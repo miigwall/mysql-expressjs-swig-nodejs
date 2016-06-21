@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+{% if username %}
+
+<h1>DRINK</h1>
+<img class="checkpoint_icon" src="images/icon_drink.png" />
+
+<div>
+	<div>Logged in as {{ username }}</div>
+	<form name="use" method="post">
+		<input type="submit" name="use_drink" value="Drink!" />
+	</form>
+	<div class="pointlinks">
+		<a href="./">Back</a>
+	</div>
+</div>
+
+{% endif %}
+
+{% endblock %}

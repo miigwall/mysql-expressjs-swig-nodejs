@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+	<h1>INFO</h1>
+	<img class="checkpoint_icon" src="images/icon_info.png" />
+
+{% if username %}
+
+	<div>
+		<div>Logged in as {{ username }}</div>
+		<form name="logout" method="post">
+			<input type="submit" name="logout" value="Logout" />
+		</form>
+		<div class="pointlinks">
+			<a href="drink">Drink - {{ p_drink }}</a>
+			<a href="food">Food - {{ p_food }}</a>
+			<a href="wc">WC - {{ p_wc }}</a>
+		</div>
+	</div>
+
+{% else %}
+
+	<form name="add-user" method="post">
+		<div class="input">
+			<div class="label">Type your username:</div>
+			<input type="text" name="username" value="" />
+		</div>
+		<div class="actions">
+			<input type="submit" value="Login" />
+		</div>
+	</form>
+
+{% endif %}
+
+{% endblock %}
